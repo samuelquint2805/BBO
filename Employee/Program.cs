@@ -31,6 +31,8 @@ Employ emp3 = new ComissionEmployee
     salary = 2000000,
     comissionRate = 500000
 };
+bool Regre = true;
+while (Regre) { 
 //menu de opciones
 Console.ForegroundColor = ConsoleColor.Green;
 string border = new string('*', 50);
@@ -47,43 +49,44 @@ Console.WriteLine("5) salir");
 int opc = int.Parse(Console.ReadLine());
 
 
-// Validación de la opción ingresada y la información del empleado
-switch (opc)
-{
-    case 1:
-        
-        Console.WriteLine(emp1);
-        break;
-    case 2:
-        
-        Console.WriteLine(emp2);
-        break;
-    case 3:
-       
-        Console.WriteLine(emp3);
-        break;
-    case 4:
-        List<Employ> employees = new List<Employ> {
+    // Validación de la opción ingresada y la información del empleado
+    switch (opc)
+    {
+        case 1:
+
+            Console.WriteLine(emp1);
+            break;
+        case 2:
+
+            Console.WriteLine(emp2);
+            break;
+        case 3:
+
+            Console.WriteLine(emp3);
+            break;
+        case 4:
+            List<Employ> employees = new List<Employ> {
             emp1,
             emp2,
             emp3
             };
-        Payroll payroll = new Payroll
-        {
-            id = 1,
-            description = "Nómina de septiembre",
-            date = new Getime(2023, 9, 30),
-            employees = employees
-        };
-        Console.WriteLine(payroll);
-        break;
-    case 5:
-        break;
-    default:
-                Console.WriteLine("Opción no válida. Por favor, seleccione una opción válida.");
-        break;
+            Payroll payroll = new Payroll
+            {
+                id = 1,
+                description = "Nómina de septiembre",
+                date = new Getime(2023, 9, 30),
+                employees = employees
+            };
+            Console.WriteLine(payroll);
+            break;
+        case 5:
+            Regre = false;
+            break;
+        default:
+            Console.WriteLine("Opción no válida. Por favor, seleccione una opción válida.");
+            break;
+    }
 }
-
 
 
 
